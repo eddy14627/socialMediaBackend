@@ -34,6 +34,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
 app.use("/assets", express.static(path.join(__dirname, "public/assets")));
 
+console.log(process.env.MONGODB_URL);
 // file storage
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
