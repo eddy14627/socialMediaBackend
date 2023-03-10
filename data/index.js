@@ -160,9 +160,21 @@ export const posts = [
       [userIds[4], true],
     ]),
     comments: [
-      "random comment",
-      "another random comment",
-      "yet another random comment",
+      {
+        userId: userIds[0],
+        commentText: "random comment",
+        commentPicture: "p11.jpeg",
+      },
+      {
+        userId: userIds[1],
+        commentText: "another random comment",
+        commentPicture: "p3.jpeg",
+      },
+      {
+        userId: userIds[2],
+        commentText: "yet another random comment",
+        commentPicture: "p4.jpeg",
+      },
     ],
   },
   {
@@ -182,10 +194,21 @@ export const posts = [
       [userIds[2], true],
     ]),
     comments: [
-      "one more random comment",
-      "and another random comment",
-      "no more random comments",
-      "I lied, one more random comment",
+      {
+        userId: userIds[6],
+        commentText: "one more random comment",
+        commentPicture: "p8.jpeg",
+      },
+      {
+        userId: userIds[7],
+        commentText: "and another random comment",
+        commentPicture: "p9.jpeg",
+      },
+      {
+        userId: userIds[5],
+        commentText: "I lied, one more random comment",
+        commentPicture: "p7.jpeg",
+      },
     ],
   },
   {
@@ -205,7 +228,11 @@ export const posts = [
       [userIds[5], true],
     ]),
     comments: [
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus exercitationem mollitia dignissimos maiores, quia nostrum velit rerum maxime, nisi aspernatur officia adipisci cum repellat neque hic accusantium laborum ipsam ad? Tempora enim fuga molestias aliquam eligendi nam ut officia odit consequatur natus ipsam voluptate, repudiandae rem. Obcaecati, vel. Aut eum iste quod atque a exercitationem odio, explicabo delectus qui quidem.",
+      {
+        userId: userIds[6],
+        commentText: "one more random comment",
+        commentPicture: "p8.jpeg",
+      },
     ],
   },
   {
@@ -224,12 +251,16 @@ export const posts = [
       [userIds[3], true],
     ]),
     comments: [
-      "I lied again, one more random comment",
-      "Why am I doing this?",
-      "I'm bored",
-      "I'm still bored",
-      "All I want to do is play video games",
-      "I'm going to play video games",
+      {
+        userId: userIds[7],
+        commentText: "and another random comment",
+        commentPicture: "p9.jpeg",
+      },
+      {
+        userId: userIds[5],
+        commentText: "I lied, one more random comment",
+        commentPicture: "p7.jpeg",
+      },
     ],
   },
   {
@@ -249,7 +280,16 @@ export const posts = [
       [userIds[7], true],
     ]),
     comments: [
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus accusantium dignissimos illum aspernatur? Eveniet perspiciatis eos voluptas illo fugit dolore libero, quibusdam aut, excepturi autem pariatur repellat at dolores cupiditate?",
+      {
+        userId: userIds[6],
+        commentText: "one more random comment",
+        commentPicture: "p8.jpeg",
+      },
+      {
+        userId: userIds[5],
+        commentText: "I lied, one more random comment",
+        commentPicture: "p7.jpeg",
+      },
     ],
   },
   {
@@ -268,11 +308,21 @@ export const posts = [
     ]),
 
     comments: [
-      "Can I play video games now?",
-      "No let's actually study",
-      "Never mind, I'm going to play video games",
-      "Stop it.",
-      "Michael, stop it.",
+      {
+        userId: userIds[6],
+        commentText: "one more random comment",
+        commentPicture: "p8.jpeg",
+      },
+      {
+        userId: userIds[5],
+        commentText: "I lied, one more random comment",
+        commentPicture: "p7.jpeg",
+      },
+      {
+        userId: userIds[7],
+        commentText: "and another random comment",
+        commentPicture: "p9.jpeg",
+      },
     ],
   },
 ];

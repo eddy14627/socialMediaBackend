@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { commentSchema } from "./comment.js";
 
 const postSchema = mongoose.Schema(
   {
@@ -23,7 +24,7 @@ const postSchema = mongoose.Schema(
       of: Boolean, // type of Map
     },
     comments: {
-      type: Array,
+      type: [commentSchema],
       default: [],
     },
   },
