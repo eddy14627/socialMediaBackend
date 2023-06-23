@@ -1,10 +1,14 @@
 import Post from "../models/Post.js";
 import User from "../models/User.js";
+import { uploadImage } from "./CloudinaryUpload.js";
 
 // CREATE
 export const createPost = async (req, res) => {
   try {
     const { userId, description, picturePath } = req.body;
+    console.log(req.file);
+    const file = req.file;
+    const picture = await uploadImage(file);
     const user = await User.findById(userId);
     const newPost = new Post({
       userId,
@@ -13,7 +17,7 @@ export const createPost = async (req, res) => {
       location: user.location,
       description,
       userPicturePath: user.picturePath,
-      picturePath,
+      picturePath: picture,
       likes: {
         // here it will have something like :
         //  "someid" : true
