@@ -5,7 +5,7 @@ import { uploadImage } from "./CloudinaryUpload.js";
 
 /* REGISTER USER */
 export const register = async (req, res) => {
-  console.log(req.body);
+  console.log("register", req.body);
   try {
     const {
       firstName,
@@ -18,18 +18,18 @@ export const register = async (req, res) => {
       occupation,
     } = req.body;
 
-    console.log(req.file);
+    console.log("req.file", req.file);
     const file = req.file;
     const salt = await bcrypt.genSalt(10);
     const passwordHash = await bcrypt.hash(password, salt);
-    const picture = await uploadImage(file);
+    const picture = file && (await uploadImage(file));
 
     const newUser = new User({
       firstName,
       lastName,
       email,
       password: passwordHash,
-      picturePath: picture,
+      picturePath: picture && picture,
       friends,
       location,
       occupation,
