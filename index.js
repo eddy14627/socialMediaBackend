@@ -114,9 +114,6 @@ const uploads = multer({ storage });
 // routes with files
 /* uploads.single("picture") => one file will be uploaded at a time and 
 "picture" is the field name in form where file is stored */
-app.get("/", (req, res) => {
-  res.send("server is running");
-});
 app.post("/auth/register", uploads.single("picture"), register);
 app.post("/posts", verifyToken, uploads.single("picture"), createPost);
 
@@ -125,6 +122,18 @@ app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
 app.use("/comment", commentRoutes);
+
+app.get("/", (req, res) => {
+  res.send("API is running....");
+});
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static(path.join(__dirname, "/client/build")));
+
+//   app.get("*", (req, res) =>
+//     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"))
+//   );
+// } else {
+// }
 
 // MONGOOSE SETUP
 const PORT = process.env.PORT || 6001;
