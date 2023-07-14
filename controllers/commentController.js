@@ -9,7 +9,8 @@ export const addComment = async (req, res) => {
     console.log(req.body);
     const uniquePost = await Post.findById(postId);
     uniquePost.comments.push({ commentText, commentPicture, userId });
-    uniquePost.save();
+    await uniquePost.save();
+    console.log(uniquePost);
     res.status(200).json(uniquePost);
   } catch (error) {
     res.status(404).json({ error: error.message });
