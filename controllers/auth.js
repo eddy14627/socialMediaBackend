@@ -18,6 +18,9 @@ export const register = async (req, res) => {
       occupation,
     } = req.body;
 
+    const user = await User.findOne({ email: email });
+    if (user) return res.status(400).json({ msg: "Email is already in use" });
+
     console.log("req.file", req.file);
     const file = req.file;
     const salt = await bcrypt.genSalt(10);
@@ -50,7 +53,7 @@ export const login = async (req, res) => {
     const { email, password } = req.body;
     const user = await User.findOne({ email: email });
     if (!user) return res.status(400).json({ msg: "User does not exist. " });
-
+    console.log(user);
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) return res.status(400).json({ msg: "Invalid credentials. " });
 
